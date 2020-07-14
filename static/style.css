@@ -1,0 +1,164 @@
+/* 10 Selector basics to use everytime you code */
+
+
+/* 1. "*"  selector styles everthing on the page and it's great for creating a reset and also for creating some page defaults like the font faily and size you wish to have */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+} 
+
+/* 2. "A+B" this selector is called an adjacent selector and what it does is selects the element that is immediately after the first element. If youw anted to select the first div after our header you would type: */
+
+header + div {
+    margin-top: 50px;
+}
+
+/* 3. "A>B" this selector will only select the direct chidlren unlike A B will select any level children of A. This selector is recommended for when you are working with first level children of a parent element. For example if you want to select the first level list items in an unordered list that looks like "main" on our html */
+
+ul > li {
+    background: powderblue;
+    color: white;
+}
+
+/* 4. A[href*="example"] : this is a really good selector for when you want to style a particular link in a different way, wahtever is in quotes will be matched against the href of the link. For example to style all links to facebook with the color blue you would use: */
+
+a[href*="facebook"]{
+    color: blue;
+}
+/* there is also a version without the * that matches the exact url that you can use for exact links */
+
+
+/* 5. A:not(B) : this selector if particularly useful because of it's negation caluse that allows you to select any group of elements that do not match what you place in B. If youw ant to select every div except the footer you just need: */
+div:not(.footer){
+    margin-bottom: 40px;
+}
+
+/* 6. A:first-child / A:last-child : the first-child and last-child allow us to select the first and last child of the parent element. This can be a great help when it comes to list items and removing the margin-right or borders. To remove the border in the first list itme and the margin in the last list item you need: */
+ul li:first-child{
+    border: none;
+}
+ul li:last-child{
+    margin-right: 0px;
+}
+
+/* 7. A:nth-child(n) : the nth-child is a simple way for you to select any child of an element by it's order. If for example youw anted to the thrid list item in an unordered list this would be the way to go: */
+
+ul li:nth-child(3) {
+    background: #ccc;
+}
+
+/* 8. A:nth-last-child(n) : the nth-last-child works like the nth-child but instead of counting from the first list item it starts counting from the last, so if you use it with the number two it will selet the list item that comes before the last one and its usage is just like the nth-child selector */
+
+ul li:nth-last-child(1){
+    background: rgb(199, 228, 213);
+}
+
+/* 9. A:nth-of-type(n) : This selector does exactly what you think it does; it sees what type of element you placed on it and it selects, for example, the third element on your page that matches what you typed. For selecting the third paragraph in a div you would use: */
+
+div p:nth-of-type(3){
+    font-style: italic;
+}
+
+
+/* 10. A:visited : Ever noticed that when you search for something on google the pages you have already seen appear in a different color? That is exactly what visited does. This is a great addition for the users but it's sometimes forgotten and by my experience it comes in handy every time I search google. */
+
+a:visited {
+    color: plum;
+}
+
+/* "Final thoughts: In my experience using these kinds of slectors when coding can save us a lot of time and also avoid the need for a lot of ID's cluttering up our markup. And this is just the beginning of CSS selctors, there a re plenty more slectors that are really handy but sometimes forgotton" - Sara Vieira */
+
+
+
+/* Other stylers from coding dojo website  */
+
+/* determines what should happen when the content inside of the container is too large for the container size*/
+/* div {
+    overflow: scroll;
+} */
+
+/* background: background property can modify the background of an element all in one line. this is a shorter version than splitting each property on its own line of code. The color can be defined using hex, rgb, or semantic code */
+/* p {
+    background: #ffffff url("cherries.jpg") no-repeat fixed center;
+  } */
+
+/* background-color | background-image | background-position | background-size | background-repeat:
+These background properties adjust the background by property type. Like background, background-color can be defined using hex, rgb or semantic code. */
+
+#header p {
+background-color: hsl(240, 100%, 70%);
+
+}
+.container {
+background-image: url("cherries.jpg");
+background-position: center;
+background-size: auto;
+background-repeat: no-repeat;
+}
+
+
+/* border: this property adjusts all border elements in one line. the first value is the border thickness. the second value is the border type. the third value is the border color. the color can be hex, rgb, or semantic code.
+the border property can also be broken down into separate lines using border-width, border-style and border color. additionally, you can select very specifically which border you want to style by using border-top, border-bottome, border-right, border-left */
+
+button {
+    border: 2px dotted green;
+}
+div {
+border: 1px solid #000000;
+}
+p {
+border-right: 1px groove rgb(100,100,100);
+border-left: 1px groove rgb(200,200,200);
+}
+
+/* border-radius: this property allow the corners of your border to be given a rounded appearance. the values can be set using px or % */
+button {
+    border-radius: 5px;
+}
+
+.animation {
+    animation-name: mymove;
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation: mymove 5s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+
+.bye {
+    animation-name: mybye;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: mybye 2s infinite linear alternate;
+    
+      
+}
+
+@keyframes mybye {
+    to {transform: rotateY(180deg);}
+}
+
+.bye:hover {
+    animation-play-state: paused;
+}
+
+#main p {
+    width: 200px;
+    height: 300px;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right,blue 0%,red 100%),url('cow.jpg');
+    background-blend-mode:color-dodge;
+
+} 
+
