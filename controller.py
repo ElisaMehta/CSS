@@ -10,6 +10,8 @@ def main():
     print("*"*40)
     return render_template("selectors.html")
 
+def color():
+    return render_template("animation.html")
 
 def add_user():
     if len(request.form['fname'])<2:

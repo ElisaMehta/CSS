@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+} 
+
+#container {
+    width: 1000px;
+    /* background-color: rgb(170, 183, 224); */
+    margin: 0px auto;
+    padding: 15px;
+    box-shadow: lavenderblush;
+    border-radius: 15px;
+}
+
+div {
+    margin: 0px auto;
+    padding: 10px;
+
+}
+
+.header h1 {
+    color: lavender;
+    font-size: 60px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 2px;    
+    text-shadow:5px 5px 4px rgb(162, 0, 255);
+  }
+
+.header {
+    animation-name: myhey;
+    position: relative;
+    width: 800px;
+    height: 80px;
+    background-color: rgb(190, 202, 243);
+    animation: myhey 6s infinite linear alternate;
+    /* border: 1px solid blue; */
+    border-radius: 10px;
+    box-shadow:20px 20px 50px 10px pink;  
+}
+      
+
+
+@keyframes myhey {
+  to {transform: rotateY(180deg);}
+}
+
+.header:hover {
+  animation-play-state: paused;
+}
+
+body {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-image: url("cowprint.jpg");
+    height: 100%;
+    width: 100%;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; 
+    
+    
+    
+}
+
+.animation {
+    animation-name: mysmile;
+    min-height: 325px;
+    background-image: url("smiley.jpg");
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: auto;
+    background-position: center;
+    animation-direction: alternate;
+    position: relative;
+    animation: mysmile 5s infinite;
+    /* animation-fill-mode: both; */
+    
+}
+
+@keyframes mysmile {
+    from {left: 0px;} 
+    to {left: 200px;}
+    
+}
+
+
+
+.box {
+    animation-name: mybox;
+    height: 30px;
+    width: 30px;
+    background-color: lavenderblush;
+    animation-direction: alternate;
+    position: relative;
+    animation: mybox 5s infinite;
+
+}
+
+@keyframes mybox {
+    0%   {background: red; left: 0px; top: 0px;}
+    25%  {background: yellow; left: 125px; top: 0px;}
+    50%  {background: blue; left: 125px; top: 125px;}
+    75%  {background: green; left: 0px; top: 125px;}
+    100% {background: red; left: 0px; top: 0px;}
+    
+}
